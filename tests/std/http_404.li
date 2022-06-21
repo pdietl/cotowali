@@ -1,3 +1,0 @@
-require 'http'
-
-http::get('https://httpstat.us/404')

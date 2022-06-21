@@ -1,3 +1,0 @@
-module hello {
-  var text = 'hello'
-}

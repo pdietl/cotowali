@@ -1,3 +1,0 @@
-error: undefined_variable.li 1,9: compiler variable `undefined` is not defined
-    1 | println(# undefined #)
-      |         ^^^^^^^^^^^^^

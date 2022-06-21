@@ -1,4 +1,0 @@
-require './hello.mod.li'
-require './world.mod'
-
-var hello_world = "${hello::text} ${world::text}"

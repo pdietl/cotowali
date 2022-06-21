@@ -1,5 +1,0 @@
-fn undefined_variable() {
-  inline {
-    echo %n
-  }
-}

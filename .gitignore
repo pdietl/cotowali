@@ -1,16 +1,1 @@
-*.c
-/*.sh
-/cmd/lic/lic
-/lic
-/tests/tester
-/vim-lsp.log
-/tmp
-/bin
-/dist
-/tests/lic
-/tests/himorogi
-
-profile.txt
-
-image.ppm
-image.png
+/target

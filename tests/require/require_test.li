@@ -1,6 +1,0 @@
-require './mod.mod.li'
-require './mod.mod.li' {}
-
-assert(mod::one == 1)
-assert(mod::hello() == 'hello mod')
-assert(mod2::hello() == 'hello mod2')

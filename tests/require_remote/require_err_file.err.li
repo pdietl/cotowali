@@ -1,2 +1,0 @@
-require 'https://raw.githubusercontent.com/cotowali/cotowali/main/tests/require_remote/err.mod.li'
-require 'github:cotowali/cotowali/main/tests/require_remote/err.mod.li'

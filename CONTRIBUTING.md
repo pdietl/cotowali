@@ -1,7 +1,5 @@
 # How to contribute with code.
 
-See [development.md](./docs/development.md)
-
 0. Fork repository
 0. Create your branch
 0. Commit your changes

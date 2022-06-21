@@ -79,13 +79,7 @@ eval "$(konryu init)"
 
 0. Install required tools
 
-    - [The V Programming Language](https://github.com/vlang/v)
-        ```sh
-        git clone https://github.com/vlang/v
-        cd v
-        make
-        ```
-
+    - [Cargo](https://www.rust-lang.org/tools/install)
     - [zakuro9715/z](https://github.com/zakuro9715/z)
         ```sh
         go install github.com/zakuro9715/z

@@ -1,9 +1,0 @@
-error: err.mod.li 1,5: mismatched types: `int` (expected) and `string` (found)
-    1 | var n: int = '10'
-      |     ^^^^^^^^^^^^^
-error: err.mod.li 1,5: variable `n` is already defined
-    1 | var n: int = '10'
-      |     ^
-error: err.mod.li 1,5: mismatched types: `int` (expected) and `string` (found)
-    1 | var n: int = '10'
-      |     ^^^^^^^^^^^^^

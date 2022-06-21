@@ -1,9 +1,0 @@
-require 'platform'
-
-#[mangle]
-fn func_mangle() {}
-
-fn func() {}
-
-assert(platform::has_command('func'))
-assert(!platform::has_command('func_mangle'))
