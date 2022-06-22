@@ -6,6 +6,7 @@
 pub use impls::impls;
 pub use paste::paste;
 pub use pretty_assertions::{assert_eq, assert_ne};
+pub use test_case::test_case;
 
 #[macro_export]
 macro_rules! assert_iter_eq {

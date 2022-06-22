@@ -41,13 +41,11 @@ impl<'a> From<&'a str> for Chars<'a> {
 #[cfg(test)]
 mod tests {
     use crate::*;
-    use cotowali_asserts::*;
-    use rstest::*;
+    use cotowali_asserts::{test_case, *};
 
-    #[rstest]
-    #[case("abcd", vec!["a", "b", "c", "d"])]
-    #[case("あa\n🐈a̐", vec!["あ", "a", "\n", "🐈", "a̐"])]
-    fn test_iter(#[case] text: &str, #[case] char_strs: Vec<&str>) {
+    #[test_case("abcd", vec!["a", "b", "c", "d"])]
+    #[test_case("あa\n🐈a̐", vec!["あ", "a", "\n", "🐈", "a̐"])]
+    fn test_iter(text: &str, char_strs: Vec<&str>) {
         assert_iter_eq!(Chars::from(text), char_strs);
     }
 }

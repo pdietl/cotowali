@@ -120,8 +120,7 @@ pub fn is_hex_digit(c: Char<'_>) -> bool {
 #[cfg(test)]
 mod tests {
     use crate::*;
-    use cotowali_asserts::{assert_eq, assert_ne};
-    use rstest::*;
+    use cotowali_asserts::test_case;
 
     #[test]
     fn test_char_eq_ne() {
@@ -159,52 +158,34 @@ mod tests {
         assert!(!Char::from("🐈").is_empty());
     }
 
-    #[rstest]
-    fn test_whitespaces(#[values(" ", "\t", "\n", "\r")] c: &str) {
-        assert!(is_whitespace(c.into()));
+    #[test_case(" "  => (true, false); "space")]
+    #[test_case("\t" => (true, false ); "tab")]
+    #[test_case("\n" => (true, true ); "ln")]
+    #[test_case("\r" => (true, true ); "cr")]
+    #[test_case("a"  => (false, false))]
+    #[test_case("あ" => (false, false))]
+    fn test_whitespace_newline(c: &str) -> (bool, bool) {
+        (is_whitespace(c.into()), is_newline(c.into()))
     }
 
-    #[rstest]
-    fn test_not_whitespaces(#[values("a", "あ")] c: &str) {
-        assert!(!is_whitespace(c.into()));
-    }
-
-    #[rstest]
-    fn test_newline(#[values("\n", "\r")] c: &str) {
-        assert!(is_newline(c.into()));
-        assert!(is_whitespace(c.into()));
-    }
-
-    #[rstest]
-    fn test_not_newline(#[values(" ", "\t")] c: &str) {
-        assert!(!is_newline(c.into()));
-    }
-
-    #[rstest]
-    fn test_octal_digits(#[values("0", "3", "7")] c: &str) {
-        assert!(is_decimal_digit(c.into()));
-        assert!(is_hex_digit(c.into()));
-        assert!(is_octal_digit(c.into()));
-    }
-
-    #[rstest]
-    fn test_decimal_digits(#[values("8", "9")] c: &str) {
-        assert!(!is_octal_digit(c.into()));
-        assert!(is_decimal_digit(c.into()));
-        assert!(is_hex_digit(c.into()));
-    }
-
-    #[rstest]
-    fn test_hex_digits(#[values("a", "A", "f", "F")] c: &str) {
-        assert!(!is_octal_digit(c.into()));
-        assert!(!is_decimal_digit(c.into()));
-        assert!(is_hex_digit(c.into()));
-    }
-
-    #[rstest]
-    fn test_not_digits(#[values("g", "三")] c: &str) {
-        assert!(!is_octal_digit(c.into()));
-        assert!(!is_decimal_digit(c.into()));
-        assert!(!is_hex_digit(c.into()));
+    #[test_case("0"  => (true, true, true))]
+    #[test_case("1"  => (true, true, true))]
+    #[test_case("7"  => (true, true, true))]
+    #[test_case("8"  => (false, true, true))]
+    #[test_case("9"  => (false, true, true))]
+    #[test_case("a"  => (false, false, true))]
+    #[test_case("A"  => (false, false, true); "capital_a")]
+    #[test_case("f"  => (false, false, true))]
+    #[test_case("F"  => (false, false, true); "capital_f")]
+    #[test_case("g"  => (false, false, false))]
+    #[test_case("G"  => (false, false, false); "capital_g")]
+    #[test_case("①"  => (false, false, false); "1_with_circle")]
+    #[test_case("四" => (false, false, false))]
+    fn test_is_digit_octal_decimal_hex(c: &str) -> (bool, bool, bool) {
+        (
+            is_octal_digit(c.into()),
+            is_decimal_digit(c.into()),
+            is_hex_digit(c.into()),
+        )
     }
 }
