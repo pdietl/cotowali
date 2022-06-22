@@ -1,0 +1,19 @@
+default: run
+tasks:
+  setup: |
+    rustup component add clippy
+    cargo install cargo-tarpaulin
+  hello: z run ./examples/hello_world.li
+  run: cargo run $@
+  build: cargo build $@
+  test: cargo test $@
+  test.package: cargo test -p $@
+  test.p: z test.package $@
+  test.unit: cargo test $@ --tests
+  test.insta: cargo insta test -- --test integration
+  test.review: cargo insta test --review
+  test.cov: cargo tarpaulin $@
+  fix: z lint fix && z fmt
+  fmt: cargo fmt
+  lint: cargo clippy --all-targets --all-features $@
+  lint.fix: z lint --fix --allow-dirty

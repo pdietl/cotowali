@@ -1,0 +1,12 @@
+---
+source: cotowali/tests/integration.rs
+expression: "cotowali_testutil::run_source(path)"
+input_file: cotowali/tests/sources/main.li
+---
+stdout_text = '''
+10
+'''
+stdout_bytes = []
+stderr_text = ''
+stderr_bytes = []
+code = 0

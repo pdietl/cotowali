@@ -1,0 +1,17 @@
+[package]
+name = "cotowali_parser"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+cotowali_utils = { path = "../cotowali_utils" }
+cotowali_error = { path = "../cotowali_error" }
+cotowali_ast = { path = "../cotowali_ast" }
+cotowali_token = { path = "../cotowali_token" }
+cotowali_source = { path = "../cotowali_source" }
+
+[dev-dependencies]
+cotowali_asserts = { path = "../cotowali_asserts" }
+cotowali_lexer = { path = "../cotowali_lexer" }

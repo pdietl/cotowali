@@ -1,0 +1,10 @@
+[package]
+name = "lic"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+clap = { version = "3", features = ["derive"] }
+cotowali = { path = "../cotowali" }
+cotowali_source = { path = "../cotowali_source" }
+cotowali_error = { path = "../cotowali_error" }

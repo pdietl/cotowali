@@ -1,0 +1,17 @@
+[package]
+name = "cotowali"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tempfile = "3.3.0"
+cotowali_error = { path = "../cotowali_error" }
+cotowali_source = { path = "../cotowali_source" }
+cotowali_ast = { path = "../cotowali_ast" }
+cotowali_lexer = { path = "../cotowali_lexer" }
+cotowali_parser = { path = "../cotowali_parser" }
+cotowali_emitter = { path = "../cotowali_emitter" }
+
+[dev-dependencies]
+insta = { version = "1.14.0", features = ["glob", "toml"] }
+serde = { version = "1.0", features = ["derive"] }

@@ -1,0 +1,15 @@
+[workspace]
+members = [
+  "lic",
+  "cotowali",
+  "cotowali_chars",
+  "cotowali_error",
+  "cotowali_source",
+  "cotowali_token",
+  "cotowali_ast",
+  "cotowali_lexer",
+  "cotowali_parser",
+  "cotowali_emitter",
+  "cotowali_asserts",
+  "cotowali_utils",
+]

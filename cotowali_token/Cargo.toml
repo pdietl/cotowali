@@ -1,0 +1,11 @@
+[package]
+name = "cotowali_token"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+cotowali_source = { path = "../cotowali_source" }
+cotowali_utils = { path = "../cotowali_utils" }
+
+[dev-dependencies]
+cotowali_asserts = { path = "../cotowali_asserts" }

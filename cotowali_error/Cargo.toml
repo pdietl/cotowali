@@ -1,0 +1,13 @@
+[package]
+name = "cotowali_error"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+cotowali_utils = { path = "../cotowali_utils" }
+cotowali_source = { path = "../cotowali_source" }
+
+[dev-dependencies]
+cotowali_asserts = { path = "../cotowali_asserts" }
